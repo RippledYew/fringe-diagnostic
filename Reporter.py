@@ -10,7 +10,7 @@ def get_operator():
 
 operator = get_operator()
 subprocess.run('figlet FRINGE | lolcat', shell=True)
-
+subprocess.run(['neofetch'])
 
 name = "Ripple"
 node = "Acer"
