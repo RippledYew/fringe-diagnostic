@@ -35,3 +35,10 @@ Not a stability collapse - collapse signature would be millions, not ~3.
 - Compare with original probe results if available
 - Recalibrate tolerance window on Zion once live
 - Run no-clip (v4.0 target) to test invariant behavior in unbounded space
+
+### Platform Test (2026-06-01)
+Ran smoke test run on Android/Pydroid3 (original platform)
+Result: CURV?SOC=3.087 - identical to Acer/Linux result.
+Platform hypothesis: ELIMINATED.
+New hypothesis: 0.685 canonical value was measured during specific sector sweep probes, not smoke test defaults. 
+The smoke test may not be the STD invariant sweet spot.
