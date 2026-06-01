@@ -22,7 +22,7 @@ import os
 
 # Pydroid runs via exec() so __file__ resolves incorrectly.
 # Hardcode emulated storage root where both files live.
-sys.path.insert(0, "/storage/emulated/0")
+sys.path.insert(0, "/home/ripple/python/ecfm/")
 
 import json
 import argparse
