@@ -67,18 +67,51 @@ CURV/SOC range: 0,007-0.12 - consistent, below invariant window.
 Marginal seed-to-seed variation consistent with different
 approach paths to the same attractor basin.
 
-### Conclusion
-Bounded divergence arc is SEED-INDEPENDENT at N=28, eta=0.75.
-STD fixed point convergence confirmed across 5 seeds on Acer node.
-Matches v3.6 report characterization of STD attractor robustness.
+## Crossing Point Precision - probe_007 and probe_008
+**Date:** 2026-06-02
+**Params:** N=28, eta=0.75, seed=0
+
+### 100-Step Resolution (probe_007)
+| steps | regime   | cos_theta |
+|-------|----------|-----------|
+| 31000 | PERP     | +0.0340   |
+| 31100 | PERP     | +0.0410   |
+| 31200 | PERP     | +0.0495   |
+| 31300 | PERP     | +0.0595   |
+| 31400 | PERP     | +0.0715   |
+| 31500 | PERP     | +0.0715   |
+| 31600 | BOUNDARY | +0.0854   |
+| 31700 | BOUNDARY | +0.1017   |
+| 31800 | BOUNDARY | +0.1204   |
+| 31900 | BOUNDARY | +0.1417   |
+| 32000 | BOUNDARY | +0.1654   |
+
+### 10-Step Resolution (probe_008)
+| steps | regime   | cos_theta |
+|-------|----------|-----------|
+| 31500 | PERP     | +0.0854   |
+| 31510 | PERP     | +0.0870   |
+| 32520 | PERP     | +0.0885   |
+| 31530 | PERP     | +0.0901   |
+| 31540 | PERP     | +0.0917   |
+| 31550 | PERP     | +0.0933   |
+| 31560 | PERP     | +0.0949   |
+| 31570 | PERP     | +0.0966   |
+| 31580 | PERP     | +0.0983   |
+| 31590 | PERP     | +0.1000   |
+| 31600 | BOUNDARY | +0.1017   |
+
+Matches v3.6 report characterization of STD attractor robustness.|
+cos_theta lifts off monotonically from near-zero toward STD recovery.
+||F|| spike expected at or just before t=31590
 
 ## Next Steps - Updated 2026-06-02
 ### Completed
 - [x] Bounded divergence arc captured via stepsweep (probe_003)
 - [x] Seed independence confirmed 5/5 seeds (probe_004)
+- [x] Crossing point pinned to t=31590-31600 (probe_007, probe_008)
 
 ### Active
-- [ ] Hunt ||F|| spike during crossing - probe targetting t=25k-35k
-- [ ] Confirm CURV/SOC behavior during the excursion window
-- [ ] Test whether bounded divergence arc timing shifts with N
+- [ ] Confirm ||F|| value at crossing point
+- [ ] Test N-dependence of crossing timing
 - [ ] No-clip probe (v4.0 target) - pending Zion coming online
