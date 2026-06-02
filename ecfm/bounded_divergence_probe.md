@@ -7,7 +7,7 @@
 ## Summary
 Steps sweep across 5k-20k captured the full bounded divergence arc described in v3.6 Report Section VII.A. First direct observation of SSM crossing mechanism via step sweep probe.
 
-## Date - probe_003 Results
+## Data - probe_003 Results
 | steps | regime   | cos_theta | tau    | inv  |
 |-------|----------|-----------|--------|------|
 | 5000  | STD      | +0.666    | 0.9994 | flag |
@@ -46,7 +46,39 @@ First step-sweep confirmation of bounded divergence on Acer node.
 Establishes that N=28, ets=0.75, seed=0 reliably produces the
 full STD SSM crossing arc within 50k steps.
 
-## Next Steps
-- Design probe targetting t=25k-35k to capture the ||F|| spike
-- Confirm CURV/SOC behavior during the excursion window
-- Test whether bounded divergence arc is seed-independent
+## Seed Independence Test - probe_004
+**Date:** 2026-06-02
+**Params;** N=28, ets=0.75, steps=50000, seeds=0-4
+
+### Data - probe_004 results
+| seed | regime | cos_theta | CURV/SOC | tau    | inv  |
+|------|--------|-----------|----------|--------|------|
+| 0    | STD    | +0.9125   | 0.008    | 1.0000 | flag |
+| 1    | STD    | +0.9195   | 0.007    | 1.0000 | flag |
+| 2    | STD    | +0.8782   | 0.012    | 1.0000 | flag |
+| 3    | STD    | +0.9114   | 0.008    | 1.0000 | flag |
+| 4    | STD    | +0.9009   | 0.009    | 1.0000 | flag |
+
+### Interpretation
+All five seeds converge to STD attractor at 50k steps. 
+tau pegged at 1.0000 across all seeds - full condensation.
+cos_theta range: 0.878-0.920 - near STD fixed point (canonical 0.912)
+CURV/SOC range: 0,007-0.12 - consistent, below invariant window.
+Marginal seed-to-seed variation consistent with different
+approach paths to the same attractor basin.
+
+### Conclusion
+Bounded divergence arc is SEED-INDEPENDENT at N=28, eta=0.75.
+STD fixed point convergence confirmed across 5 seeds on Acer node.
+Matches v3.6 report characterization of STD attractor robustness.
+
+## Next Steps - Updated 2026-06-02
+### Completed
+- [x] Bounded divergence arc captured via stepsweep (probe_003)
+- [x] Seed independence confirmed 5/5 seeds (probe_004)
+
+### Active
+- [ ] Hunt ||F|| spike during crossing - probe targetting t=25k-35k
+- [ ] Confirm CURV/SOC behavior during the excursion window
+- [ ] Test whether bounded divergence arc timing shifts with N
+- [ ] No-clip probe (v4.0 target) - pending Zion coming online
