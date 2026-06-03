@@ -84,8 +84,11 @@ def main():
     operator = get_operator()
                    
     with Live(make_dashboard(operator), refresh_per_second=1) as live:
-          while True:
-            time.sleep(2)
-            live.update(make_dashboard(operator))
-            
+        while True:
+            try:
+                time.sleep(2)
+                live.update(make_dashboard(operator))
+            except KeyboardInterrupt:
+                break
+                    
 main()
