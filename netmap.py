@@ -15,7 +15,7 @@ def scan_network():
     return "10.58.163.0/24"
 
 def run_scan(subnet):
-    result = subprocess.run(
+    result=subprocess.run(
         ['nmap', '-sn', subnet],
         capture_output=True, text=True
     )
@@ -49,7 +49,6 @@ def display(devices, operator, subnet):
     table.add_column('[bold]STATUS[/bold]', style="green")
     table.add_column("[bold]MAC[/bold]", style="white")
     table.add_column("[bold]VENDOR[/bold]", style="magenta")
-    
     for d in devices:
         table.add_row(
             d.get('host', '?'),
