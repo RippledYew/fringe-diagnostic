@@ -1,0 +1,21 @@
+{
+  "probes": [
+    {
+      "probe_id": "p_test",
+      "timestamp": "2026-06-04 06:50:21.210556",
+      "config": {
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 400
+      },
+      "result": {
+        "regime": "STD",
+        "tau": 0.99,
+        "cos_theta": 0.735,
+        "curv_soc": 3.087
+      }
+    }
+  ],
+  "created": "2026-06-04 06:50:21.210526"
+}
