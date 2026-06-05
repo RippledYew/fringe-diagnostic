@@ -33,7 +33,7 @@ def scan_cluster():
     
     for name, info in cluster.items():
         console.print(f"[cyan]Pinging {name}...[/cyan]")
-        status = ping(info["ip"])
+        status = ping(info.ip)
         if status == "online":
             color = "green"
         elif status == "pending":
@@ -42,8 +42,8 @@ def scan_cluster():
             color = "red"
         table.add_row(
             name,
-            info["role"],
-            info["ip"],
+            info.role,
+            info.ip,
             f"[{color}]{status}[/{color}]"
         )
         
