@@ -5,6 +5,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 from rich import box
+from fringe_nodes import cluster
 
 console = Console()
 
@@ -25,6 +26,18 @@ def show_menu(operator):
     table.add_row("6", "backup       - backup python folder")
     table.add_row("7", "ecfm         - research pipeline")
     table.add_row("8", "exit")
+    
+    node_table = Table(box=box.SIMPLE, show_header=False, expand=True)
+    node_table.add_column(justify="left", style="green")
+    node_table.add_column(justify="left", style="cyan")
+    node_table.add_column(justify="right", style="white")
+    
+    for name, info in cluster.items():
+        node_table.add_row(name, info["role"], info["status"])
+        
+    console.print(Panel(node_table,
+        title="[bold green]CLUSTER STATUS[/bold green]",
+        border_style="green"))
     
     console.print(Panel(table,
         title=f"[bold green]FRINGE COMMAND CENTER - {operator.upper()}[/bold green]",
