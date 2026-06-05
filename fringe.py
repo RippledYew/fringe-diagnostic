@@ -56,9 +56,15 @@ def main():
         if choice == "1":
             subprocess.run(['reporter'])
         elif choice == "2":
-            subprocess.run(['syswatch'])
+            try:
+                subprocess.run(['syswatch'])
+            except KeyboardInterrupt:
+                pass
         elif choice == "3":
-            subprocess.run(['status'])
+            try:
+                subprocess.run(['status'])
+            except KeyboardInterrupt:
+                pass
         elif choice == "4":
             subprocess.run(['sudo', 'netmap'])
         elif choice == "5":
