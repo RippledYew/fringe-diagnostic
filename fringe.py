@@ -25,7 +25,8 @@ def show_menu(operator):
     table.add_row("5", "logwatch     - log monitor")
     table.add_row("6", "backup       - backup python folder")
     table.add_row("7", "ecfm         - research pipeline")
-    table.add_row("8", "exit")
+    table.add_row("8", "pingfringe   - cluster ping scan")
+    table.add_row("9", "exit")
     
     node_table = Table(box=box.SIMPLE, show_header=False, expand=True)
     node_table.add_column(justify="left", style="green")
@@ -67,6 +68,8 @@ def main():
         elif choice == "7":
             subprocess.run(['ecfm'])
         elif choice == "8":
+            subprocess.run(['pingfringe'])
+        elif choice == "9":
             console.print("[cyan]Fringe out.[/cyan]")
             break
         else:
