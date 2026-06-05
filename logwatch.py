@@ -37,7 +37,9 @@ def watch_log(logfile, operator):
     except FileNotFoundError:
         console.print(f"[red]Log file not found: {logfile}[/red]")
         sys.exit(1)
-        
+    except KeyboardInterrupt:
+        console.print("[cyan]Logwatch closed. [/cyan]")
+          
 def main():
     operator = get_operator()
     if len(sys.argv) < 1:
