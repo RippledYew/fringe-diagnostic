@@ -1,3 +1,10 @@
+from rich.console import Console
+from rich.panel import Panel
+from rich.table import Table
+from rich import box
+
+console = Console()
+
 class FringeNode:
     def __init__(self, name, status, ip, role, os, cpu, cores, ram_gb):
         self.name = name
@@ -9,8 +16,18 @@ class FringeNode:
         self.cores = cores
         self.ram_gb = ram_gb
     def report(self):
-        print(f"Node: {self.name} | Status: {self.status} | IP: {self.ip}")
-        print(f"Role: {self.role} | OS: {self.os} | Cores: {self.cores} | RAM: {self.ram_gb}GB")
+        table = Table(box=box.SIMPLE, show_header=False, expand=True)
+        table.add_column(justify="left", style="cyan")
+        table.add_column(justify="left", style="white")
+        table.add_row("Name", self.name)
+        table.add_row("Status", self.status)
+        table.add_row("IP", self.ip)
+        table.add_row("Role", self.role)
+        table.add_row("OS", self.os)
+        table.add_row("CPU", self.cpu)
+        table.add_row("Cores", str(self.cores))
+        table.add_row("RAM", f"{self.ram_gb}GB")
+        console.print(Panel(table, title=f"[bold green]{self.name}[/bold green]", border_style="green"))
     def is_online(self):
         return self.status == "online"
     def ping(self):
