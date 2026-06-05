@@ -20,7 +20,8 @@ class FringeNode:
         table.add_column(justify="left", style="cyan")
         table.add_column(justify="left", style="white")
         table.add_row("Name", self.name)
-        table.add_row("Status", self.status)
+        status_color = "green" if self.is_online() else "yellow"
+        table.add_row("Status", f"[{status_color}]{self.status}[/{status_color}]")
         table.add_row("IP", self.ip)
         table.add_row("Role", self.role)
         table.add_row("OS", self.os)
