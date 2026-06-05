@@ -2,6 +2,7 @@
 import sys
 sys.path.insert(0, '/home/ripple/python/ecfm')
 import ecfm_runner as er
+import probe_logger
 
 configs = [
     {"probe_id": "p005", "probe_name": "Sweep_steps", "N": 28, "eta": 0.75, "seed": 0, "steps": 400},
@@ -14,5 +15,9 @@ configs = [
 for config in configs:
     result = er.run_probe(config)
     print(er.summarize(result))
-    
+    probe_logger.log_probe(
+        config["probe_id"],
+        config,
+        {"summary": er.summarize(result)}
+    )
  

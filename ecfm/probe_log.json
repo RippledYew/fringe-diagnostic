@@ -15,6 +15,786 @@
         "cos_theta": 0.735,
         "curv_soc": 3.087
       }
+    },
+    {
+      "probe_id": "p001",
+      "timestamp": "2026-06-04 23:16:13.440731",
+      "config": {
+        "probe_id": "p001",
+        "sweep_param": "sweep_eta",
+        "N": 28,
+        "eta": 0.5,
+        "seed": 0,
+        "steps": 400
+      },
+      "result": {
+        "summary": "[p001] complete | regime=STD | phase=CONDENSATE | tau=0.9905 | cos_theta=+0.7112 | CURV/SOC=3.091 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p002",
+      "timestamp": "2026-06-04 23:16:13.694960",
+      "config": {
+        "probe_id": "p002",
+        "sweep_param": "sweep_eta",
+        "N": 28,
+        "eta": 0.6,
+        "seed": 0,
+        "steps": 400
+      },
+      "result": {
+        "summary": "[p002] complete | regime=STD | phase=CONDENSATE | tau=0.9904 | cos_theta=+0.6738 | CURV/SOC=3.056 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p003",
+      "timestamp": "2026-06-04 23:16:13.955055",
+      "config": {
+        "probe_id": "p003",
+        "sweep_param": "sweep_eta",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 400
+      },
+      "result": {
+        "summary": "[p003] complete | regime=STD | phase=CONDENSATE | tau=0.9900 | cos_theta=+0.7352 | CURV/SOC=3.087 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p004",
+      "timestamp": "2026-06-04 23:16:14.216661",
+      "config": {
+        "probe_id": "p004",
+        "sweep_param": "sweep_eta",
+        "N": 28,
+        "eta": 0.9,
+        "seed": 0,
+        "steps": 400
+      },
+      "result": {
+        "summary": "[p004] complete | regime=STD | phase=CONDENSATE | tau=0.9897 | cos_theta=+0.6827 | CURV/SOC=3.078 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p005",
+      "timestamp": "2026-06-04 23:20:05.832778",
+      "config": {
+        "probe_id": "p005",
+        "probe_name": "Sweep_steps",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 400
+      },
+      "result": {
+        "summary": "[p005] complete | regime=STD | phase=CONDENSATE | tau=0.9900 | cos_theta=+0.7352 | CURV/SOC=3.087 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p006",
+      "timestamp": "2026-06-04 23:20:06.431223",
+      "config": {
+        "probe_id": "p006",
+        "probe_name": "Sweep_steps",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 1000
+      },
+      "result": {
+        "summary": "[p006] complete | regime=STD | phase=CONDENSATE | tau=0.9960 | cos_theta=+0.7278 | CURV/SOC=1.272 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p007",
+      "timestamp": "2026-06-04 23:20:09.212657",
+      "config": {
+        "probe_id": "p007",
+        "probe_name": "Sweep_steps",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 5000
+      },
+      "result": {
+        "summary": "[p007] complete | regime=STD | phase=CONDENSATE | tau=0.9994 | cos_theta=+0.6659 | CURV/SOC=0.294 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p008",
+      "timestamp": "2026-06-04 23:20:14.457666",
+      "config": {
+        "probe_id": "p008",
+        "probe_name": "Sweep_steps",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 10000
+      },
+      "result": {
+        "summary": "[p008] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9998 | cos_theta=+0.4249 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p009",
+      "timestamp": "2026-06-04 23:20:40.696257",
+      "config": {
+        "probe_id": "p009",
+        "probe_name": "Sweep_steps",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 50000
+      },
+      "result": {
+        "summary": "[p009] complete | regime=STD | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.9125 | CURV/SOC=0.008 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p010",
+      "timestamp": "2026-06-04 23:21:23.433136",
+      "config": {
+        "probe_id": "p010",
+        "probe_name": "lock_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 5000
+      },
+      "result": {
+        "summary": "[p010] complete | regime=STD | phase=CONDENSATE | tau=0.9994 | cos_theta=+0.6659 | CURV/SOC=0.294 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p011",
+      "timestamp": "2026-06-04 23:21:27.634540",
+      "config": {
+        "probe_id": "p011",
+        "probe_name": "lock_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 7500
+      },
+      "result": {
+        "summary": "[p011] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9997 | cos_theta=+0.5673 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p012",
+      "timestamp": "2026-06-04 23:21:33.002295",
+      "config": {
+        "probe_id": "p012",
+        "probe_name": "lock_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 10000
+      },
+      "result": {
+        "summary": "[p012] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9998 | cos_theta=+0.4249 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p013",
+      "timestamp": "2026-06-04 23:21:39.522443",
+      "config": {
+        "probe_id": "p013",
+        "probe_name": "lock_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 12500
+      },
+      "result": {
+        "summary": "[p013] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.2893 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p014",
+      "timestamp": "2026-06-04 23:21:47.347130",
+      "config": {
+        "probe_id": "p014",
+        "probe_name": "lock_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 15000
+      },
+      "result": {
+        "summary": "[p014] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.1771 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p015",
+      "timestamp": "2026-06-04 23:21:57.911340",
+      "config": {
+        "probe_id": "p015",
+        "probe_name": "lock_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 20000
+      },
+      "result": {
+        "summary": "[p015] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0172 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p016",
+      "timestamp": "2026-06-04 23:23:10.398654",
+      "config": {
+        "probe_id": "p016",
+        "probe_name": "seed_sweep",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 0,
+        "steps": 50000
+      },
+      "result": {
+        "summary": "[p016] complete | regime=STD | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.9125 | CURV/SOC=0.008 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p017",
+      "timestamp": "2026-06-04 23:23:38.319877",
+      "config": {
+        "probe_id": "p017",
+        "probe_name": "seed_sweep",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 1,
+        "steps": 50000
+      },
+      "result": {
+        "summary": "[p017] complete | regime=STD | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.9195 | CURV/SOC=0.007 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p018",
+      "timestamp": "2026-06-04 23:24:05.287465",
+      "config": {
+        "probe_id": "p018",
+        "probe_name": "seed_sweep",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 2,
+        "steps": 50000
+      },
+      "result": {
+        "summary": "[p018] complete | regime=STD | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.8782 | CURV/SOC=0.012 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p019",
+      "timestamp": "2026-06-04 23:24:31.100557",
+      "config": {
+        "probe_id": "p019",
+        "probe_name": "seed_sweep",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 3,
+        "steps": 50000
+      },
+      "result": {
+        "summary": "[p019] complete | regime=STD | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.9114 | CURV/SOC=0.008 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p020",
+      "timestamp": "2026-06-04 23:24:57.895498",
+      "config": {
+        "probe_id": "p020",
+        "probe_name": "seed_sweep",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 4,
+        "steps": 50000
+      },
+      "result": {
+        "summary": "[p020] complete | regime=STD | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.9009 | CURV/SOC=0.009 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p021",
+      "timestamp": "2026-06-04 23:25:29.659775",
+      "config": {
+        "probe_id": "p021",
+        "probe_name": "f_spike_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 20000
+      },
+      "result": {
+        "summary": "[p021] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0172 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p022",
+      "timestamp": "2026-06-04 23:25:44.190613",
+      "config": {
+        "probe_id": "p022",
+        "probe_name": "f_spike_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 25000
+      },
+      "result": {
+        "summary": "[p022] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=-0.0106 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p023",
+      "timestamp": "2026-06-04 23:26:01.509516",
+      "config": {
+        "probe_id": "p023",
+        "probe_name": "f_spike_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 30000
+      },
+      "result": {
+        "summary": "[p023] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0054 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p024",
+      "timestamp": "2026-06-04 23:26:20.016868",
+      "config": {
+        "probe_id": "p024",
+        "probe_name": "f_spike_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 35000
+      },
+      "result": {
+        "summary": "[p024] complete | regime=STD | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.6345 | CURV/SOC=0.056 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p025",
+      "timestamp": "2026-06-04 23:26:40.987047",
+      "config": {
+        "probe_id": "p025",
+        "probe_name": "f_spike_hunt",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 40000
+      },
+      "result": {
+        "summary": "[p025] complete | regime=STD | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.7638 | CURV/SOC=0.028 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p026",
+      "timestamp": "2026-06-04 23:27:10.145781",
+      "config": {
+        "probe_id": "p026",
+        "probe_name": "f_spike_zoom",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 0,
+        "steps": 30000
+      },
+      "result": {
+        "summary": "[p026] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0054 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p027",
+      "timestamp": "2026-06-04 23:27:26.514328",
+      "config": {
+        "probe_id": "p027",
+        "probe_name": "f_spike_zoom",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 0,
+        "steps": 31000
+      },
+      "result": {
+        "summary": "[p027] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0340 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p028",
+      "timestamp": "2026-06-04 23:27:43.340830",
+      "config": {
+        "probe_id": "p028",
+        "probe_name": "f_spike_zoom",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 0,
+        "steps": 32000
+      },
+      "result": {
+        "summary": "[p028] complete | regime=BOUNDARY | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.1915 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p029",
+      "timestamp": "2026-06-04 23:28:00.950127",
+      "config": {
+        "probe_id": "p029",
+        "probe_name": "f_spike_zoom",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 0,
+        "steps": 33000
+      },
+      "result": {
+        "summary": "[p029] complete | regime=BOUNDARY | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.4722 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p030",
+      "timestamp": "2026-06-04 23:28:20.729486",
+      "config": {
+        "probe_id": "p030",
+        "probe_name": "f_spike_zoom",
+        "N": 28,
+        "ets": 0.75,
+        "seed": 0,
+        "steps": 34000
+      },
+      "result": {
+        "summary": "[p030] complete | regime=STD | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.5908 | CURV/SOC=0.065 | inv=flag"
+      }
+    },
+    {
+      "probe_id": "p031",
+      "timestamp": "2026-06-04 23:29:05.411691",
+      "config": {
+        "probe_id": "p031",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31000
+      },
+      "result": {
+        "summary": "[p031] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0340 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p032",
+      "timestamp": "2026-06-04 23:29:21.461959",
+      "config": {
+        "probe_id": "p032",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31100
+      },
+      "result": {
+        "summary": "[p032] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0410 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p033",
+      "timestamp": "2026-06-04 23:29:38.686766",
+      "config": {
+        "probe_id": "p033",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31200
+      },
+      "result": {
+        "summary": "[p033] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0495 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p034",
+      "timestamp": "2026-06-04 23:29:56.276225",
+      "config": {
+        "probe_id": "p034",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31300
+      },
+      "result": {
+        "summary": "[p034] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0595 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p035",
+      "timestamp": "2026-06-04 23:30:13.423014",
+      "config": {
+        "probe_id": "p035",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31400
+      },
+      "result": {
+        "summary": "[p035] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0715 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p036",
+      "timestamp": "2026-06-04 23:30:29.690705",
+      "config": {
+        "probe_id": "p036",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31500
+      },
+      "result": {
+        "summary": "[p036] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0854 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p037",
+      "timestamp": "2026-06-04 23:30:46.120381",
+      "config": {
+        "probe_id": "p037",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31600
+      },
+      "result": {
+        "summary": "[p037] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.1017 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p038",
+      "timestamp": "2026-06-04 23:31:03.695189",
+      "config": {
+        "probe_id": "p038",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31700
+      },
+      "result": {
+        "summary": "[p038] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.1204 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p039",
+      "timestamp": "2026-06-04 23:31:20.601411",
+      "config": {
+        "probe_id": "p039",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31800
+      },
+      "result": {
+        "summary": "[p039] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.1417 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p040",
+      "timestamp": "2026-06-04 23:31:37.003383",
+      "config": {
+        "probe_id": "p040",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31900
+      },
+      "result": {
+        "summary": "[p040] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.1654 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p041",
+      "timestamp": "2026-06-04 23:31:53.493308",
+      "config": {
+        "probe_id": "p041",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 32000
+      },
+      "result": {
+        "summary": "[p041] complete | regime=BOUNDARY | phase=CONDENSATE | tau=1.0000 | cos_theta=+0.1915 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p042",
+      "timestamp": "2026-06-04 23:32:32.857868",
+      "config": {
+        "probe_id": "p042",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31500
+      },
+      "result": {
+        "summary": "[p042] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0854 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p043",
+      "timestamp": "2026-06-04 23:32:49.193670",
+      "config": {
+        "probe_id": "p043",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31510
+      },
+      "result": {
+        "summary": "[p043] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0870 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p044",
+      "timestamp": "2026-06-04 23:33:05.521093",
+      "config": {
+        "probe_id": "p044",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31520
+      },
+      "result": {
+        "summary": "[p044] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0885 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p045",
+      "timestamp": "2026-06-04 23:33:21.928905",
+      "config": {
+        "probe_id": "p045",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31530
+      },
+      "result": {
+        "summary": "[p045] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0901 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p046",
+      "timestamp": "2026-06-04 23:33:38.337679",
+      "config": {
+        "probe_id": "p046",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31540
+      },
+      "result": {
+        "summary": "[p046] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0917 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p047",
+      "timestamp": "2026-06-04 23:33:54.732773",
+      "config": {
+        "probe_id": "p047",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31550
+      },
+      "result": {
+        "summary": "[p047] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0933 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p048",
+      "timestamp": "2026-06-04 23:34:11.113492",
+      "config": {
+        "probe_id": "p048",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31560
+      },
+      "result": {
+        "summary": "[p048] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0949 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p049",
+      "timestamp": "2026-06-04 23:34:27.587300",
+      "config": {
+        "probe_id": "p049",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31570
+      },
+      "result": {
+        "summary": "[p049] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0966 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p050",
+      "timestamp": "2026-06-04 23:34:43.934714",
+      "config": {
+        "probe_id": "p050",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31580
+      },
+      "result": {
+        "summary": "[p050] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.0983 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p051",
+      "timestamp": "2026-06-04 23:35:00.339637",
+      "config": {
+        "probe_id": "p051",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31590
+      },
+      "result": {
+        "summary": "[p051] complete | regime=PERP | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.1000 | inv=pass"
+      }
+    },
+    {
+      "probe_id": "p052",
+      "timestamp": "2026-06-04 23:35:16.700370",
+      "config": {
+        "probe_id": "p052",
+        "probe_name": "f_spike_exact",
+        "N": 28,
+        "eta": 0.75,
+        "seed": 0,
+        "steps": 31600
+      },
+      "result": {
+        "summary": "[p052] complete | regime=BOUNDARY | phase=CONDENSATE | tau=0.9999 | cos_theta=+0.1017 | inv=pass"
+      }
     }
   ],
   "created": "2026-06-04 06:50:21.210526"
