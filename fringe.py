@@ -69,8 +69,11 @@ def main():
         elif choice == "4":
             subprocess.run(['sudo', 'netmap'])
         elif choice == "5":
-            logfile = input("Log file path: ")
-            subprocess.run(['logwatch', logfile])
+            try:
+                logfile = input("Log file path: ")
+                subprocess.run(['logwatch', logfile])
+            except KeyboardInterrupt:
+                console.print("[cyan]Logwatch Closed. [/cyan]")
         elif choice == "6":
             subprocess.run(['backup'])
         elif choice == "7":
