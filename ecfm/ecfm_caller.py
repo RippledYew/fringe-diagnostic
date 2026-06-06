@@ -40,13 +40,29 @@ while True:
             console.print(f"[yellow]Running step {s}...[/yellow]")
             r = run_probe({"probe_id": f"sweep_{i}", "probe_name": "divergence_sweep",
                            "N": 28, "eta": 0.75, "seed": 0, "steps": s})
-            console.print(f"[green]{summarize(r)}[/green]")
+            obs = r.get("observables") or {}
+            regime = r.get("regime", "?")
+            regime_color = "green" if regime == "STD" else "yellow" if regime == "PERP" else "red"
+            inv = r.get("invariant_check") or {}
+            cs = inv.get("checks", {}).get("curv_soc_ratio", {})
+            cs_val = f"{cs['value']:.4f}" if cs.get("value") is not None else "N/A"
+            
+            table = Table(box=box.SIMPLE, show_header=False, expand =True)
+            table.add_column(justify="left", style="cyan")
+            table.add_column(justify="left", style="white")
+            table.add_row("Steps", str(s))
+            table.add_row("Regime", f"[{regime_color}]{regime}[/{regime_color}]")
+            table.add_row("Phase", str(obs.get("phase", "?")))
+            table.add_row("cos_theta", f"{obs.get('cos_theta', float('nan')):+.4f}")
+            table.add_row("tau", f"{obs.get('tau', float('nan')):.4f}")
+            table.add_row("CURV/SOC", cs_val)
+            console.print(Panel(table, title=f"[bold] Probe sweep_{i} - {s} steps[/bold]", border_style=regime_color))   
         console.print("[cyan]Sweep complete.[/cyan]")
         
     elif choice == "3":
         console.print("[yellow]Deep geometry run - 200k steps[/yellow]")
         console.print("[yellow]Frank target - not yet available on Acer[/yellow]")
-        console.print("[cyan]This probe will run when Frank is online.[/cyan]")
+        console.print("[cyan]This probe willle run when Frank is online.[/cyan]")
         
     elif choice == "4":
         subprocess.run(['python3', '/home/ripple/python/ecfm/ecfm_runner.py'])
