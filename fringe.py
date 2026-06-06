@@ -19,7 +19,7 @@ def show_menu(operator):
     table.add_column(justify="left", style="cyan")
     table.add_column(justify="left", style="white")
     
-    table.add_row("1", "reporter     -system snapshot")
+    table.add_row("1", "reporter       -system snapshot")
     table.add_row("2", "syswatch       - live monitor")
     table.add_row("3", "status         - operator dashboard")
     table.add_row("4", "netmap         - network scanner")
