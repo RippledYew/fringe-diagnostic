@@ -11,7 +11,7 @@ import subprocess
 
 console = Console()
 
-subprocess.run('figlet FRINGE | lolcat', shell=True)
+subprocess.run('figlet FRINGE | /usr/games/lolcat', shell=True)
 
 while True:
     table = Table(box=box.SIMPLE, show_header=False, expand=True)

@@ -47,7 +47,7 @@ def show_menu(operator):
         border_style="green"))
     
 def main():
-    subprocess.run('figlet FRINGE | lolcat', shell=True)
+    subprocess.run('figlet FRINGE | /usr/games/lolcat', shell=True)
     operator = get_operator()
     
     while True:
