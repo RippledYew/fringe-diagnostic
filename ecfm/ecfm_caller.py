@@ -65,7 +65,38 @@ while True:
         console.print("[cyan]This probe willle run when Frank is online.[/cyan]")
         
     elif choice == "4":
-        subprocess.run(['python3', '/home/ripple/python/ecfm/ecfm_runner.py'])
+            import os
+            import json
+            results_path = '/home/ripple/python/ecfm/ecfm_results/'
+            try:
+                files = sorted(os.listdir(results_path))
+                entries = []
+                for fname in files:
+                   if fname.endswith('.json'):
+                       with open(os.path.join(results_path, fname)) as f:
+                           for line in f:
+                               if line.strip():
+                                   entries.append(json.loads(line))
+                table = Table(box=box.SIMPLE, show_header=True, expand=True)                  
+                table.add_column("ID", style="cyan")
+                table.add_column("Regime", style="white")
+                table.add_column("Phase", style="white")
+                table.add_column("cos_theta", style="white")
+                table.add_column("tau", style="white")
+                for e in entries:
+                    obs = e.get("observables") or {}
+                    regime = e.get("regime", "?")
+                    regime_color = "green" if regime == "STD" else "yellow" if regime == "PERP" else "red"
+                    table.add_row(
+                        e.get("probe_id", "?"),
+                        f"[{regime_color}]{regime}[/{regime_color}]",
+                        str(obs.get("phase", "?")),
+                        f"{obs.get('cos_theta', float('nan')):+.4f}",
+                        f"{obs.get('tau', float('nan')):.4}",
+                    )
+                console.print(Panel(table, title="[bold green]PROBE LOG[/bold green]", border_style="green"))
+            except FileNotFoundError:
+                console.print("[red] No probe log found.[/red]")
         
     elif choice == "5":
         subprocess.run(['ls', '-1h', '/home/ripple/python/ecfm/'])
