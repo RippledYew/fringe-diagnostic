@@ -45,7 +45,7 @@ while True:
         
     elif choice == "3":
         console.print("[yellow]Deep geometry run - 200k steps[/yellow]")
-        console.print("[yellow]Frank target) - not yet available on Acer[/yellow]")
+        console.print("[yellow]Frank target - not yet available on Acer[/yellow]")
         console.print("[cyan]This probe will run when Frank is online.[/cyan]")
         
     elif choice == "4":
