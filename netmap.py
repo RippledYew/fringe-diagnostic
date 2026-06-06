@@ -59,7 +59,7 @@ def display(devices, operator, subnet):
     console.print(table)
     
 def main():
-    subprocess.run('figlet FRINGE | lolcat', shell=True)
+    subprocess.run('figlet FRINGE | /usr/games/lolcat', shell=True)
     operator = get_operator()
     console.print("[cyan]Scanning network...[/cyan]")
     subnet = scan_network()
