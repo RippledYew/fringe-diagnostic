@@ -41,10 +41,11 @@ class FringeNode:
         else:
             return f"{self.name} - unreachable"
         
-if __name__ == "__main__":
+def demo():
     acer = FringeNode("Acer", "online", "192.168.1.50", "learn", "ubuntu 22.04", "intel if-7200U", 4, 16)
     frank = FringeNode("Frank", "pending", "TBD", "compute", "ubuntu 24.04", "Dual Xeon e5-2699 v4", 44, 256)
     egor = FringeNode("Egor", "pending", "TBD", "watchdog", "armbian", "RK3588S", 8, 32)
+
     print(acer.name)
     print(acer.status)
     print(acer.ping())
@@ -53,3 +54,7 @@ if __name__ == "__main__":
     acer.report()
     frank.report()
     egor.report()
+
+
+if __name__ == "__main__":
+    demo()

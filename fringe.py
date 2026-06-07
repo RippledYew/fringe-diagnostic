@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 import subprocess
 import sys
-sys.path.insert(0, '/home/ripple/python')
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
@@ -49,7 +52,7 @@ def show_menu(operator):
 def main():
     subprocess.run('figlet FRINGE | /usr/games/lolcat', shell=True)
     operator = get_operator()
-    
+
     while True:
         show_menu(operator)
         choice = input("Select: ")
@@ -89,4 +92,6 @@ def main():
         else:
             console.print("[red]Invalid choice[/red]")
 
-main()
+
+if __name__ == "__main__":
+    main()
