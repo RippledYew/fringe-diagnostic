@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "2026-06-07 15:18",
+    "target": "M31",
+    "scope": "N/A",
+    "eyepiece": "N/A",
+    "conditions": "1",
+    "seeing": "1",
+    "notes": "first Fringe Cosmology test session\""
+  },
+  {
+    "timestamp": "2026-06-07 15:20",
+    "target": "M31",
+    "scope": "n/a",
+    "eyepiece": "n/a",
+    "conditions": "suboptimal daytime",
+    "seeing": "1",
+    "notes": "\"first Fringe Cosmology test session.\""
+  }
+]
