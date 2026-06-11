@@ -12,31 +12,50 @@ def get_operator():
     return name
 
 def scan_network():
-    return "10.58.163.0/24"
+    result = subprocess.run(
+        ['ip', 'route', 'show', 'default'],
+        capture_output=True, text=True
+    )
+    for line in result.stdout.split('\n'):
+        if 'default' in line:
+            parts = line.split()
+            for i, part in enumerate(parts):
+                if part == 'dev':
+                    iface = parts[i + 1]
+                    # get IP of that interface
+                    ip_result = subprocess.run(
+                        ['ip', '-4', 'addr', 'show', iface],
+                        capture_output=True, text=True
+                    )
+                    for ip_line in ip_result.stdout.split('\n'):
+                        if 'inet ' in ip_line:
+                            cidr = ip_line.strip().split()[1]
+                            octets = cidr.rsplit('.', 1)
+                            return octets[0] + '.0/24'
+    return None
 
 def run_scan(subnet):
-    result=subprocess.run(
-        ['nmap', '-sn', subnet],
+    result = subprocess.run(
+        ['sudo', 'arp-scan', '--localnet'],
         capture_output=True, text=True
     )
     return result.stdout
 
 def parse_results(raw):
     devices = []
-    current = {}
     for line in raw.split('\n'):
-        if 'Nmap scan report' in line:
-            if current:
-                devices.append(current)
-            current = {'host': line.split()[-1]}
-        elif "MAC Address" in line:
-            parts = line.split('(')
-            current['mac'] = parts[0].split()[-1]
-            current['vendor'] = parts[1].replace(')', '').strip() if len(parts) > 1 else 'Unknown'
-        elif 'host is up' in line:
-            current['status'] = 'UP'
-    if current:
-        devices.append(current)
+        parts = line.split('\t')
+        if len(parts) >= 3:
+            ip = parts[0].strip()
+            mac = parts[1].strip()
+            vendor = parts[2].strip()
+            if ip.startswith('192.168') and ':' in mac:
+                devices.append({
+                    'host': ip,
+                    'status': 'UP',
+                    'mac': mac,
+                    'vendor': vendor
+                })
     return devices
     
 def display(devices, operator, subnet):
