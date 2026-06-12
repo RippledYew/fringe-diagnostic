@@ -34,6 +34,8 @@ def check_disk():
     partitions = psutil.disk_partitions()
     results = []
     for p in partitions:
+        if p.mountpoint.startswith('/snap'):
+            continue
         try:
             usage = psutil.disk_usage(p.mountpoint)
             results.append({
@@ -73,10 +75,11 @@ def check_toolkit():
 
 def check_top_processes():
     procs = []
-    for p in psutil.process_iter(['pid', 'name', 'cpu_percent', 'memory_percent']):
+    for p in psutil.process_iter(['pid', 'name', 'memory_percent']):
         try:
-            p.cpu_percent(interval=0.1)
+            cpu = p.cpu_percent(interval=0.1)
             info = p.info
+            info['cpu_percent'] = cpu
             if info['pid'] > 100 and info['name'] not in ['kthreadd']:
                 procs.append(info)
         except:
@@ -84,11 +87,26 @@ def check_top_processes():
     sorted_procs = sorted(procs, key=lambda x: x['memory_percent'], reverse=True)
     return sorted_procs[:5]
 
-def display_report(operator, cpu, freq, temps, ram, swap, disks, ping, toolkit, procs):
+def check_gpu():
+    try:
+        vendor = open('/sys/class/drm/card1/device/vendor').read().strip()
+        power = open('/sys/class/drm/card1/device/power_state').read().strip()
+        enable = open('/sys/class/drm/card1/device/enable').read().strip()
+        if vendor == '0x8086':
+            return {
+                'name': 'Intel HD Graphics 620',
+                'power': power,
+                'status': 'ENABLED' if enable == '1' else 'DISABLED'
+            }
+    except:
+        pass
+    return None
+
+def display_report(operator, cpu, freq, temps, ram, swap, disks, ping, toolkit, procs, uptime, gpu):
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     subprocess.run('figlet DIAGNOSTIC | lolcat', shell=True)
     console.print(Panel(
-        f"[cyan]Operator:[/cyan] {operator.upper()}   [cyan]Time:[/cyan] {now}",
+        f"[cyan]Operator:[/cyan] {operator.upper()}   [cyan]Time:[/cyan] {now}  [cyan]Uptime:[/cyan] {uptime}",
         title="[bold green]FRINGE DIAGNOSTIC REPORT[/bold green]",
         box=box.DOUBLE
     ))
@@ -98,6 +116,19 @@ def display_report(operator, cpu, freq, temps, ram, swap, disks, ping, toolkit, 
         f"[cyan]Freq: {round(freq.current)}MHz[/cyan]  ",
         title="[bold]CPU[/bold]",
         box=box.SIMPLE
+        ))
+    if temps:
+        temp_lines = []
+        for chip, entries in temps.items():
+            for entry in entries:
+                if not entry.label:
+                    continue
+                temp_color = "green" if entry.current < 70 else "yellow" if entry.current < 90 else "red"
+                temp_lines.append(f"[{temp_color}]{entry.label}: {entry.current}°C[/{temp_color}]")
+        console.print(Panel(
+            "   ".join(temp_lines),
+            title="[bold]TEMPS[/bold]",
+            box=box.SIMPLE
         ))
     ram_color = "green" if ram.percent < 70 else "yellow" if ram.percent < 90 else "red"
     swap_color = "green" if swap.percent < 50 else "yellow" if swap.percent < 80 else "red"
@@ -123,7 +154,7 @@ def display_report(operator, cpu, freq, temps, ram, swap, disks, ping, toolkit, 
     console.print(disk_table)
     ping_color = "green" if "ms" in ping else "red"
     console.print(Panel(
-        f"[{ping_color}]StarlinkL {ping}[/{ping_color}]",
+        f"[{ping_color}]Starlink: {ping}[/{ping_color}]",
         title="[bold]NETWORK[/bold]",
         box=box.SIMPLE
     ))
@@ -149,17 +180,56 @@ def display_report(operator, cpu, freq, temps, ram, swap, disks, ping, toolkit, 
             f"{p['cpu_percent']}%",
             f"{round(p['memory_percent'], 1)}%"
         )
-    console.print(proc_table)
-     
+    console.print(proc_table)    
+        
+    if gpu:
+        console.print(Panel(
+            f"[cyan]{gpu['name']}[/cyan]   "
+            f"[green]Power: {gpu['power']}[/green]   "
+            f"[green]{gpu['status']}[/green]",
+            title="[bold]GPU[/bold]",
+            box=box.SIMPLE
+        ))
+   
+    
+    summary = check_summary(cpu, ram, disks, ping, temps)
+    summary_line = "  ".join(
+        f"[{'green' if v == 'OK' else 'red'}]{k}: {v}[/{'green' if v == 'OK'else 'red'}]"
+         for k, v in summary.items()
+    )
+    console.print(Panel(summary_line, title="[bold]SYSTEM STATUS[/bold]", box=box.DOUBLE))
+    
+def check_uptime():
+    boot = psutil.boot_time()
+    uptime_seconds = datetime.now().timestamp() - boot
+    hours = int(uptime_seconds // 3600)
+    minutes = int((uptime_seconds % 3600) // 60)
+    return f"{hours}h {minutes}m"
+  
 def main():
     operator = get_operator()
     console.print("[cyan] Running diagnostics...[/cyan]")
     cpu, freq, temps = check_cpu()
     ram, swap = check_ram()
+    uptime = check_uptime()
     disks = check_disk()
     ping = check_network()
     toolkit = check_toolkit()
     procs = check_top_processes()
-    display_report(operator, cpu, freq, temps, ram, swap, disks, ping, toolkit, procs)
+    gpu = check_gpu()
+    display_report(operator, cpu, freq, temps, ram, swap, disks, ping, toolkit, procs, uptime, gpu)
     
+def check_summary(cpu, ram, disks, ping, temps):
+    results = {}
+    results['CPU'] = "OK" if cpu < 90 else "WARN"
+    results['RAM'] = "OK" if ram.percent < 90 else "WARN"
+    results['DISK'] = "OK" if all(d['percent'] < 90 for d in disks) else "WARN"
+    results['NETWORK'] = "OK" if "ms" in ping else "FAIL"
+    if temps:
+        hot = any(e.current >= 90 for entries in temps.values() for e in entries)
+        results['TEMPS'] = "WARN" if hot else "OK"
+    else:
+        results['TEMPS'] = "N/A"
+    return results
+
 main()
