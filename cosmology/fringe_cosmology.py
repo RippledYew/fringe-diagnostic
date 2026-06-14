@@ -28,7 +28,8 @@ def print_menu():
     table.add_row("3", "View session log", "Past observations")
     table.add_row("4", "Run analysis", "[dim yellow] Frank target - pending[/dim yellow]")
     table.add_row("5", "Scope control", "[dim yellow]Hardware target - pending[/dim yellow]")
-    table.add_row("6", "Exit")
+    table.add_row("6", "Sky guide", "Constellations & planets")
+    table.add_row("7", "Exit")
     
     console.print(Panel(
         table,
@@ -93,6 +94,9 @@ def main():
             elif choice == "5":
                 scope_stub()
             elif choice == "6":
+                from sky_tonight import sky_menu
+                sky_menu()   
+            elif choice == "7":
                 console.print("\n[dim cyan]Returning to Fringe...[/dim cyan]\n")
                 break
             else:
